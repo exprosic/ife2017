@@ -2,7 +2,6 @@
 <html lang="zh-hans">
 	<head>
 		<meta charset="utf-8" />
-		<meta http-equiv="cache-control" content="no-cache" />
 		<title>Task 02</title>
 		<link rel="stylesheet" type="text/css" href="task02.css"/>
 	</head>
@@ -114,7 +113,6 @@
 						<td>表内容单元格</td>
 						<td><a href="#">操作</a></td>
 					</tr>
-					</tr>
 					<tr>
 						<td>表内容单元格</td>
 						<td>表内容单元格</td>
@@ -132,7 +130,7 @@
 
 		<aside>
 			<h2>这里以后是一个侧栏，这是侧栏的标题</h2>
-			<form action="#">
+			<form>
 				<fieldset>
 					<div class="field-clause">
 						<span class="instruction">请输入邮箱地址</span>
@@ -157,8 +155,8 @@
 
 					<div class="field-clause">
 						<span class="instruction">性别：</span>
-						<input id="male" type="radio" name="gender" checked/><label for="male">男</label>
-						<input id="female" type="radio" name="gender"/><label for="female">女</label>
+						<input id="male" type="radio" name="gender" value="male" checked/><label for="male">男</label>
+						<input id="female" type="radio" name="gender" value="female"/><label for="female">女</label>
 					</div>
 
 					<div class="field-clause">
@@ -170,9 +168,9 @@
 
 					<div class="field-clause">
 						<span class="instruction">爱好：</span>
-						<input id="sport" type="checkbox" name="hobby"/><label for="sport">运动</label>
-						<input id="art" type="checkbox" name="hobby"/><label for="art">艺术</label>
-						<input id="science" type="checkbox" name="hobby"/><label for="science">科学</label>
+						<input id="sport" type="checkbox" name="hobby" value="sport"/><label for="sport">运动</label>
+						<input id="art" type="checkbox" name="hobby" value="art"/><label for="art">艺术</label>
+						<input id="science" type="checkbox" name="hobby" value="science"/><label for="science">科学</label>
 					</div>
 
 					<div class="field-clause">
