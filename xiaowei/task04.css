@@ -1,0 +1,38 @@
+html, body {
+	height: 100%;
+	margin: 0px;
+}
+
+body {
+	display: flex;
+}
+
+main {
+	position: relative;
+	background-color: #ccc;
+	width: 400px;
+	height: 200px;
+	margin: auto;
+}
+
+#circ1, #circ2 {
+	width: 0px;
+	height: 0px;
+	padding: 0px;
+	margin: 0px;
+	display: inline;
+	border: 50px solid #fc0;
+	border-radius: 50px;
+}
+
+#circ1 {
+	position: absolute;
+	top: -50px;
+	left: -50px;
+}
+
+#circ2 {
+	position: absolute;
+	top: 150px;
+	left: 350px;
+}
