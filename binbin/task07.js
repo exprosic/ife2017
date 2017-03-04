@@ -16,7 +16,7 @@ window.onload = () => {
 		for (const b of buttons)
 			b[1].setAttribute('disabled', 'disabled');
 
-		traverse = async function(x) {
+		const traverse = async function(x) {
 			for (const t of order) {
 				if (t == null) {
 					setMark(x);
