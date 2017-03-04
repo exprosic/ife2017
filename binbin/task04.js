@@ -42,7 +42,9 @@ function removeNumber(f) {
 	if (numberContainer.children.length == 0) {
 		alert('Empty!');
 	} else {
-		f();
+		const node = f();
+		alert(node.innerText);
+		node.parentNode.removeChild(node);
 	}
 
 	input.focus();
@@ -57,11 +59,11 @@ function doInsertRight() {
 }
 
 function doRemoveLeft() {
-	removeNumber(() => numberContainer.removeChild(numberContainer.firstElementChild));
+	removeNumber(() => numberContainer.firstElementChild);
 }
 
 function doRemoveRight() {
-	removeNumber(() => numberContainer.removeChild(numberContainer.lastElementChild));
+	removeNumber(() => numberContainer.lastElementChild);
 }
 
 function addClickListener(b, f) {
