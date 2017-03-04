@@ -50,4 +50,5 @@ const doRemoveRight = () => removeNumber((c)   => c.lastElementChild);
 [[buttonInsertLeft, doInsertLeft],
  [buttonInsertRight, doInsertRight],
  [buttonRemoveLeft, doRemoveLeft],
- [buttonRemoveRight, doRemoveRight]].forEach(([b,f]) => b.addEventListener('click', f));
+ [buttonRemoveRight, doRemoveRight]].forEach(
+	 ([b,f]) => b.addEventListener('click', f));
