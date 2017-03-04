@@ -9,8 +9,8 @@ window.onload = () => {
 		return node;
 	};
 
-	const setMark = (node) => {node.className += ' visiting';};
-	const clearMark = (node) => {node.className = 'node';};
+	const setMark = (node) => node.classList.add('visiting');
+	const clearMark = (node) => node.classList.remove('visiting');
 
 	const doTraverse = (order) => async function() {
 		for (const b of buttons)
