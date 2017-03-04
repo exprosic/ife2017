@@ -31,7 +31,7 @@ function insertNumber(f) {
 	if (Number.isNaN(number)) {
 		alert('Not a number.');
 	} else {
-		f(number);
+		f(numberContainer, number);
 		input.value = '';
 	}
 
@@ -42,7 +42,7 @@ function removeNumber(f) {
 	if (numberContainer.children.length == 0) {
 		alert('Empty!');
 	} else {
-		const node = f();
+		const node = f(numberContainer);
 		alert(node.innerText);
 		node.parentNode.removeChild(node);
 	}
@@ -50,26 +50,12 @@ function removeNumber(f) {
 	input.focus();
 }
 
-function doInsertLeft() {
-	insertNumber((n) => numberContainer.insertBefore(newNumberNode(n), numberContainer.firstElementChild));
-}
+const doInsertLeft =  () => insertNumber((c,n) => c.insertBefore(newNumberNode(n), c.firstElementChild));
+const doInsertRight = () => insertNumber((c,n) => c.appendChild(newNumberNode(n)));
+const doRemoveLeft =  () => removeNumber((c)   => c.firstElementChild);
+const doRemoveRight = () => removeNumber((c)   => c.lastElementChild);
 
-function doInsertRight() {
-	insertNumber((n) => numberContainer.appendChild(newNumberNode(n)));
-}
-
-function doRemoveLeft() {
-	removeNumber(() => numberContainer.firstElementChild);
-}
-
-function doRemoveRight() {
-	removeNumber(() => numberContainer.lastElementChild);
-}
-
-function addClickListener(b, f) {
-	b.addEventListener('click', f);
-}
-
+const addClickListener = (b,f) => b.addEventListener('click', f);
 addClickListener(buttonInsertLeft, doInsertLeft);
 addClickListener(buttonInsertRight, doInsertRight);
 addClickListener(buttonRemoveLeft, doRemoveLeft);
