@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Task 01</title>
+	</head>
+
+	<body>
+		<label>请输入北京空气质量：<input id="aqi-input" type="text"/></label>
+		<button id="button">确认填写</button>
+
+		<div>您输入的是：<span id="aqi-display">尚未录入</span></div>
+
+	<script type="text/javascript">
+(function() {
+	var aqi_input = document.getElementById('aqi-input');
+	var aqi_display = document.getElementById('aqi-display');
+	var button = document.getElementById('button');
+	button.addEventListener('click', function() {
+		var text = aqi_input.value;
+		var text = text==="" ?"尚未录入" :text;
+		aqi_display.innerText = text;
+	});
+})();
+	</script>
+	</body>
+</html>
