@@ -1,0 +1,26 @@
+@charset 'utf-8';
+
+html,body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+}
+
+main {
+	margin: auto;
+}
+
+#number-container {
+	margin-top: 3px;
+	min-height: 200px;
+}
+
+.number {
+	display: inline-block;
+	padding: 8px;
+	margin: 8px;
+	background-color: red;
+	color: white;
+}
