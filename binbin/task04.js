@@ -47,8 +47,7 @@ const doInsertRight = () => insertNumber((c,n) => c.appendChild(newNumberNode(n)
 const doRemoveLeft =  () => removeNumber((c)   => c.firstElementChild);
 const doRemoveRight = () => removeNumber((c)   => c.lastElementChild);
 
-const addClickListener = (b,f) => b.addEventListener('click', f);
-addClickListener(buttonInsertLeft, doInsertLeft);
-addClickListener(buttonInsertRight, doInsertRight);
-addClickListener(buttonRemoveLeft, doRemoveLeft);
-addClickListener(buttonRemoveRight, doRemoveRight);
+[[buttonInsertLeft, doInsertLeft],
+ [buttonInsertRight, doInsertRight],
+ [buttonRemoveLeft, doRemoveLeft],
+ [buttonRemoveRight, doRemoveRight]].forEach(([b,f]) => b.addEventListener('click', f));
