@@ -7,26 +7,18 @@ let buttonRemoveLeft = document.getElementById('remove-left');
 let buttonRemoveRight = document.getElementById('remove-right');
 let numberContainer = document.getElementById('number-container');
 
-function newNode(tagName, className, text) {
+const newNode = (tagName, className, text)  => {
 	let node = document.createElement(tagName);
 	node.className = className;
 	node.innerText = text;
 	return node;
 }
 
-function newNumberNode(number) {
-	return newNode('span', 'number', number.toString());
-}
+const newNumberNode = (n) => newNode('span', 'number', n.toString());
+const getInputNumber = () => parseInt(input.value);
+const clearInput = () => {input.value = ''};
 
-function getInputNumber() {
-	return parseInt(input.value);
-}
-
-function clearInput() {
-	input.value = '';
-}
-
-function insertNumber(f) {
+const insertNumber = (f) => {
 	const number = getInputNumber();
 	if (Number.isNaN(number)) {
 		alert('Not a number.');
@@ -38,7 +30,7 @@ function insertNumber(f) {
 	input.focus();
 }
 
-function removeNumber(f) {
+const removeNumber = (f) => {
 	if (numberContainer.children.length == 0) {
 		alert('Empty!');
 	} else {
