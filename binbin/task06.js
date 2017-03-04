@@ -14,7 +14,7 @@ const newTextNode = (text)  => {
 };
 
 const insertText = (f) => {
-	const texts = input.value.split(/[\s,]+/).filter((s) => s!=='');
+	const texts = input.value.split(/[\s,，　、]+/).filter((s) => s!=='');
 	f(textContainer, texts);
 	input.value = '';
 	input.focus();
