@@ -24,3 +24,7 @@ main {
 	background-color: red;
 	color: white;
 }
+
+#remove-left {
+	margin-left: 40px;
+}
