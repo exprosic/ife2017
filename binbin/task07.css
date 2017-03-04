@@ -8,6 +8,7 @@ body {
 
 main {
 	margin: auto;
+	justify-content: center;
 }
 
 .node {
@@ -21,4 +22,13 @@ main {
 
 .node.visiting {
 	background-color: blue;
+}
+
+#buttons {
+	display: flex;
+	justify-content: center;
+}
+
+button {
+	margin: 10px;
 }
