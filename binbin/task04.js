@@ -1,10 +1,12 @@
 'use strict';
 
 let input = document.getElementById('input');
-let buttonInsertLeft = document.getElementById('insert-left');
-let buttonInsertRight = document.getElementById('insert-right');
-let buttonRemoveLeft = document.getElementById('remove-left');
-let buttonRemoveRight = document.getElementById('remove-right');
+let buttons = new Map([
+	['insertLeft','insert-left'],
+	['insertRight','insert-right'],
+	['removeLeft','remove-left'],
+	['removeRight','remove-right']].map(
+		([o,t]) => [o,document.getElementById(t)]));
 let numberContainer = document.getElementById('number-container');
 
 const newNode = (tagName, className, text)  => {
@@ -12,7 +14,7 @@ const newNode = (tagName, className, text)  => {
 	node.className = className;
 	node.innerText = text;
 	return node;
-}
+};
 
 const newNumberNode = (n) => newNode('span', 'number', n.toString());
 const getInputNumber = () => parseInt(input.value);
@@ -28,7 +30,7 @@ const insertNumber = (f) => {
 	}
 
 	input.focus();
-}
+};
 
 const removeNumber = (f) => {
 	if (numberContainer.children.length == 0) {
@@ -40,15 +42,14 @@ const removeNumber = (f) => {
 	}
 
 	input.focus();
-}
+};
 
-const doInsertLeft =  () => insertNumber((c,n) => c.insertBefore(newNumberNode(n), c.firstElementChild));
-const doInsertRight = () => insertNumber((c,n) => c.appendChild(newNumberNode(n)));
-const doRemoveLeft =  () => removeNumber((c)   => c.firstElementChild);
-const doRemoveRight = () => removeNumber((c)   => c.lastElementChild);
+const actions = new Map([
+	['insertLeft',  () => insertNumber((c,n) => c.insertBefore(newNumberNode(n), c.firstElementChild))],
+	['insertRight', () => insertNumber((c,n) => c.appendChild(newNumberNode(n)))],
+	['removeLeft',  () => removeNumber((c)   => c.firstElementChild)],
+	['removeRight', () => removeNumber((c)   => c.lastElementChild)],
+]);
 
-[[buttonInsertLeft, doInsertLeft],
- [buttonInsertRight, doInsertRight],
- [buttonRemoveLeft, doRemoveLeft],
- [buttonRemoveRight, doRemoveRight]].forEach(
-	 ([b,f]) => b.addEventListener('click', f));
+['insertLeft', 'insertRight', 'removeLeft', 'removeRight'].forEach(
+		(b) => buttons.get(b).addEventListener('click', actions.get(b)));
