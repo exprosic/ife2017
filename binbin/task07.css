@@ -1,0 +1,24 @@
+html,body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+}
+
+main {
+	margin: auto;
+}
+
+.node {
+	min-width: 60px;
+	min-height: 40px;
+	border: 1px solid black;
+	background-color: white;
+	display: inline-block;
+	margin: 10px 3px;
+}
+
+.node.visiting {
+	background-color: blue;
+}
