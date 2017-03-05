@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+html,body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+}
+
+main {
+	margin: auto;
+}
+
+form {
+	display: flex;
+	align-items: flex-start;
+}
+
+label {
+	font-family: "微软雅黑";
+	margin-right: 20px;
+	padding: 0.5em;
+}
+
+.input-block {
+	display: inline-block;
+}
+
+.input-block input {
+	border-radius: 4px;
+	border: 2px solid #bbb;
+	height: 2em;
+	box-shadow: 0px 0px 2px #bbb;
+	padding-left: 0.3em;
+}
+
+.input-block.wrong input {
+	border-color: #d00;
+}
+
+.input-block.right input {
+	border-color: #5b4;
+}
+
+.input-block .input-instruction {
+	display: block;
+	font-family: "微软雅黑";
+	color: #aaa;
+	padding-top: 5px;
+	font-size: 0.8em;
+}
+
+.input-block.wrong .input-instruction {
+	color: #d00;
+}
+
+.input-block.right .input-instruction {
+	color: #5b4;
+}
+
+button {
+	background-color: rgb(47,121,186);
+	border: 1px solid rgb(73,120,165);
+	border-radius: 4px;
+	padding: 0.5em 0.8em;
+	margin-left: 10px;
+	color: white;
+	font-family: "微软雅黑";
+}
