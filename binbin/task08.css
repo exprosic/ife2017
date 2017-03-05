@@ -1,0 +1,43 @@
+html,body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+}
+
+main {
+	margin: auto;
+	justify-content: center;
+}
+
+.node {
+	min-width: 40px;
+	min-height: 40px;
+	border: 1px solid black;
+	background-color: white;
+	display: flex;
+	margin: 10px 3px;
+}
+
+.node.visiting {
+	background-color: blue;
+}
+
+.node.marked {
+	background-color: lightblue;
+}
+
+#buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button {
+	margin: 10px;
+}
+
+#query-input {
+	margin-left: 50px;
+}
