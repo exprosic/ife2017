@@ -5,7 +5,12 @@
 		<title>Js Demo</title>
 		<script type="text/javascript">
 window.onload = () => {
-	console.log = (...args) => document.body.innerText += args.join(' ') + '\n';
+	oldLog = console.log;
+	console.log = (...args) => {
+		oldLog(...args);
+		document.body.innerText += args.join(' ') + '\n';
+	};
+
 	const taskName = window.location.search.slice(1);
 	if (!taskName.match(/^\w+$/))
 		return;
