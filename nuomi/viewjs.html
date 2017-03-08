@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>动态数据绑定 Demo</title>
+		<title>Js Demo</title>
 		<script type="text/javascript">
 window.onload = () => {
 	console.log = (...args) => document.body.innerText += args.join(' ') + '\n';
@@ -10,6 +10,7 @@ window.onload = () => {
 	if (!taskName.match(/^\w+$/))
 		return;
 
+	document.querySelector('title').innerText = `${taskName} Demo`;
 	const script = document.createElement('script');
 	script.type = 'application/javascript';
 	script.src = `${taskName}.js`;
