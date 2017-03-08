@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>动态数据绑定 Demo</title>
+		<script type="text/javascript">
+window.onload = () => {
+	console.log = (...args) => document.body.innerText += args.join(' ') + '\n';
+	const taskName = window.location.search.slice(1);
+	if (!taskName.match(/^\w+$/))
+		return;
+
+	const script = document.createElement('script');
+	script.type = 'application/javascript';
+	script.src = `${taskName}.js`;
+	document.body.appendChild(script);
+};
+		</script>
+	</head>
+
+	<body>
+	</body>
+</html>
